@@ -1,5 +1,5 @@
 class Shape {
-	
+	private int length;
 	private int firstInt;
 	private int secondInt;
 	private int thirdInt;
@@ -7,27 +7,30 @@ class Shape {
 	
 	public Shape(int firstInt) {
 		this.firstInt = firstInt;
+		this.length = 1;
 	}
 	public Shape(int firstInt, int secondInt) {
 		this.firstInt = firstInt;
 		this.secondInt = secondInt;
+		this.length = 2;
 	}
 	public Shape(int firstInt, int secondInt, int thirdInt) {
 		this.firstInt = firstInt;
 		this.secondInt = secondInt;
 		this.thirdInt = thirdInt;
+		this.length = 3;
 	}
-	public int getArea(int count) {
+	public void getArea() {
 
-		if(count == 0) {
-			result = firstInt;
+		if(this.length == 1) {
+			this.result = this.firstInt;
 		}
-		else if(count == 1) {
-			result = firstInt * secondInt;
+		else if(this.length == 2) {
+			this.result = this.firstInt * this.secondInt;
 		}
-		else if(count == 2) {
-			result = firstInt*secondInt*thirdInt;
+		else if(this.length == 3) {
+			this.result = this.firstInt* this.secondInt* this.thirdInt;
 		}
-		return result;
+		return this.result;
 	}
 }
