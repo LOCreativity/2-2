@@ -3,34 +3,27 @@ import java.util.Scanner;
 public class number2 {
 	public static void main(String[] args) { 
 		Scanner st = new Scanner(System.in);
-		int num[] = new int[3];
-		System.out.println("¼öÄ¡¸¦ ÀÔ·ÂÇÏ½Ã¿À (1°³ : Á÷¼±, 2°³ : Á÷»ç°¢Çü, 3°³ : Á÷À°¸éÃ¼)");
-		String str = st.nextLine(); 
-		int count = 0;
-		for(int i = 0; i < str.length(); i++) {
-			if(str.charAt(i) == ' ') { 
-				count++;
-			}
+		
+		System.out.println("ìˆ˜ì¹˜ë¥¼ ìž…ë ¥í•˜ì‹œì˜¤ (1ê°œ : ì§ì„ , 2ê°œ : ì§ì‚¬ê°í˜•, 3ê°œ : ì§ìœ¡ë©´ì²´)");
+		
+		String str = st.nextLine();
+		String []s = str.split(" ");
+		int [] num = new int[s.length];
+		for(int i = 0; i<num.length; i++) {
+			num[i] = Integer.parseInt(s[i]);
 		}
-		if(count == 0) {
-			Shape ob = new Shape(Integer.parseInt(str));
-			System.out.println("Á÷¼±ÀÇ ±æÀÌ´Â : " + ob.getArea(count));
+
+		if(num.length == 1) {
+			Shape ob = new Shape(num[0]);
+			ob.getArea();
 		}
-		else if(count == 1) {
-			String[] arr = str.split(" ");
-			for(int i = 0; i <= count; i++) {
-				num[i] = Integer.parseInt(arr[i]);
-			}
+		else if(num.length == 2) {
 			Shape ob = new Shape(num[0], num[1]);
-			System.out.println("»ç°¢ÇüÀÇ ³ÐÀÌ´Â : " + ob.getArea(count));
+			ob.getArea();
 		}
-		else if(count == 2) {
-			String[] arr = str.split(" ");
-			for(int i = 0; i <= count; i++ ) {
-				num[i] = Integer.parseInt(arr[i]);
-			}
+		else if(num.length == 3) {
 			Shape ob = new Shape(num[0], num[1], num[2]);
-			System.out.println("Á÷À°¸éÃ¼ÀÇ ºÎÇÇ´Â : " + ob.getArea(count));
+			ob.getArea();
 		}
 		st.close();
 	}
