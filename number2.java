@@ -15,15 +15,12 @@ public class number2 {
 
 		if(num.length == 1) {
 			Shape ob = new Shape(num[0]);
-			ob.getArea();
 		}
 		else if(num.length == 2) {
 			Shape ob = new Shape(num[0], num[1]);
-			ob.getArea();
 		}
 		else if(num.length == 3) {
 			Shape ob = new Shape(num[0], num[1], num[2]);
-			ob.getArea();
 		}
 		st.close();
 	}
